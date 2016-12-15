@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,400italic,300italic,300);
+
+@import "reset"; // HTML and Wordpress reset
+@import "content"; // Wordpress WYSIWYG Content
+
+@import "general";
+
+
+
+
+// =========================================================================
+// --------------------------- USEFUL SNIPPETS -----------------------------
+// =========================================================================
+
+
+// DIMMED BACKGROUND
+// background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("<?php echo $heroimage; ?>");
+
+
+// SRCSET
+// <img src="portfoliox2.jpg" srcset="portfolio.jpg 768w, portfolio.jpg 1x, portfoliox2.jpg 2x" alt="Norman">

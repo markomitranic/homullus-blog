@@ -1,0 +1,19 @@
+/*
+Theme Name: Pajovic
+Text Domain: pajovic
+
+Theme URI: http://github.com/markomitranic
+Author: Marko Mitranic
+Author URI: http://github.com/markomitranic
+Description: This theme was created for my personal non profit blog.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+body {
+	background-color: white;
+}

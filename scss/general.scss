@@ -1,0 +1,836 @@
+/* Pajovic Website Desktop CSS */
+/* TABLE OF CONTENTS */
+/* 1. General styles */
+/* 2. Sidebar/Menu */
+/* 3. Pill Icon Inclinometer */
+/* 4. Footer */
+/* 5. Content Section General Style */
+/* 6. Category Page Content Section */
+/* 7. Blog Page Content Section */
+/* 8. Landing page interactive hero */
+
+
+
+
+/* 1. GENERAL STYLES */
+/* All general styles - body, fonts, headers, tables etc */
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+h1 {
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    font-size: 100px;
+    line-height: 100px;
+    text-transform: uppercase;
+    position: relative;
+    top: -25px;
+    right: 0px;
+    display: block;
+}
+h2 {
+    color: black;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+h3, h4, h5, h6 {
+    color: #4A4A4A;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+figure {
+    margin: 0;
+}
+figcaption {
+    font-size: 12px;
+    color: #C1C1C1;
+}
+figcaption::before {
+    content: "↑ ";
+    color: black;
+    font-size: 14px;
+}
+
+/* 2. Sidebar/Menu */
+/* Styles for Main menu / Sidebar on desktop. */
+#sidebar {
+	width: 250px;
+	min-height: 100vh;
+	float: left;
+	padding-left: 10px;
+	box-sizing: border-box;
+    position: fixed;
+    top: 0;
+}
+#sidebar nav {
+	margin-bottom: 10px;
+}
+#sidebar nav ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+#sidebar nav li a {
+	color: #dadada;
+	text-transform: uppercase;
+	text-decoration: none;
+	display: block;
+    margin-bottom: -7px;
+    transition: 1s color;
+}
+#sidebar nav li a:hover {
+	color: gray;
+}
+#sidebar nav li.selected a {
+	color: #3a3a3a;
+}
+#sidebar nav li {
+	letter-spacing: -4px;
+}
+#sidebar nav li:nth-child(1) a {
+	font-size: 50px;
+    height: 50px;
+    line-height: 50px;
+}
+#sidebar nav li:nth-child(2) a {
+	font-size: 41px;
+    height: 41px;
+    line-height: 41px;
+}
+#sidebar nav li:nth-child(3) a {
+	font-size: 66px;
+    height: 66px;
+    line-height: 66px;
+}
+#sidebar nav li:nth-child(4) a {
+	font-size: 58px;
+    height: 58px;
+    line-height: 58px;
+}
+
+/* 3. PILL ICON INCLINOMETER */
+/* Styles for the page logo. The logo is animated on hover. */
+.icon-wrap {
+	background: transparent;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    transition: 0.5s all ease-in-out;
+    border: 2px solid #dadada;
+    position: relative;
+}
+.icon-scroll {
+    height: 0%;
+    width: 100%;
+    background-color: #DAE6E1;
+    position: absolute;
+}
+.icon-pill {
+	height: 20px;
+    width: 8px;
+    border-radius: 40px;
+    border: 2px solid #dadada;
+    position: absolute;
+    bottom: 0px;
+    left: 7px;
+    transition: 0.25s all ease-in;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    transition-delay: 0.4s;
+    background-color: white;
+}
+.icon-wrap:hover .icon-pill {
+  bottom: 26px;
+}
+.icon-wrap:hover {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+/* 4. FOOTER */
+/* Footer only has a few basic properties, since footer is only the copyright text. */
+footer {
+    width: 600px;
+    margin: 0 auto;
+    padding-left: 60px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    color: #bbbbbb;
+}
+footer a {
+    color: #bbbbbb;
+    text-decoration: none;
+    border-bottom: 1px dotted #bbbbbb;
+    transition: 0.2s all ease-in-out;
+}
+footer a:hover {
+    background-color: #DAE6E1;
+    color: white;
+    border-bottom: 1px dotted gray;
+}
+footer nav {
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+}
+footer nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+footer nav li {
+    display: inline;
+}
+footer nav li:after {
+    content: " | ";
+}
+footer nav li:nth-last-child(1):after {
+    display: none;
+}
+footer p {
+    text-align: center;
+    padding: 0 0 20px 0;
+    margin: 0;
+}
+#upArrow {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 48px;
+    height: auto;
+    opacity: 0.9;
+}
+
+
+
+
+/* 5. CONTENT SECTION GENERAL STYLES */
+/* Content is only but a wrapper for the page-specific content. Thus it has but a few properties. */
+#content {
+	width: calc(100% - 250px);
+	min-height: 100vh;
+	float: right;
+	box-sizing: border-box;
+}
+
+/* 6. CATEGORY PAGE CONTENT SECTION */
+/* Category page has a lot of styling fo the content. We calculate the number of articles in one row here. And style for the each specific skew.h */
+#posts { /* We calculate the number of articles with a flexbox model */
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    margin: 0 calc((100% - (5 * 140px)) / 2); /* 100% - 5 articles */
+    font-family: 'Open Sans', sans-serif;
+}
+#posts article {
+	width: 140px;
+	margin-top: 30px;
+    transition: 0.2s all ease-in-out;
+}
+#posts article .hoverArrow { /* For performance, we style the arrow first */
+	display: block;
+    opacity: 0;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #DAE6E1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    color: black;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: center;
+    transition: 0.2s all ease-in-out;
+}
+#posts article:hover .hoverArrow { /* On hover we only need to change display model */
+    opacity: 1;
+}
+#posts article a {
+	text-decoration: none;
+}
+#posts article img {
+    height: 140px;
+    width: 140px;
+    box-sizing: border-box;
+}
+#posts .postThumbnail::before { /* This is the top part of the box */
+	content: "";
+	display: block;
+	background: #eff2f2;
+	height: 10px;
+	width: 140px;
+    position: relative;
+    top: 0px;
+    left: 10px;
+}
+#posts article:nth-child(5n) .postThumbnail::after,
+#posts article:nth-last-child(1) .postThumbnail::after { /* The right section of the box only appears on the end of each row. Skew is fine-tuned. */
+    content: "";
+    display: block;
+    background: #dadada;
+    height: 140px;
+    width: 20px;
+    position: absolute;
+    top: 5px;
+    left: 140px;
+    -webkit-transform: skewY(-26deg);
+            transform: skewY(-26deg);
+}
+#posts article .postThumbnail { /* Every first ( \ ) iteration */
+    -webkit-transform: skewY(13deg);
+            transform: skewY(13deg);
+}
+#posts article .postThumbnail::before { /* Every first ( \ ) iteration */
+    -webkit-transform: skewX(-65deg);
+            transform: skewX(-65deg);
+}
+#posts article:nth-child(10n+2) .postThumbnail,
+#posts article:nth-child(10n+4) .postThumbnail,
+#posts article:nth-child(10n+7) .postThumbnail,
+#posts article:nth-child(10n+9) .postThumbnail { /* Every second ( / ) iteration */
+    -webkit-transform: skewY(-13deg);
+            transform: skewY(-13deg);
+}
+#posts article:nth-child(10n+2) .postThumbnail::before,
+#posts article:nth-child(10n+4) .postThumbnail::before,
+#posts article:nth-child(10n+7) .postThumbnail::before,
+#posts article:nth-child(10n+9) .postThumbnail::before { /* Every second ( / ) iteration */
+    -webkit-transform: skewX(65deg);
+            transform: skewX(65deg);
+}
+#posts article header {
+    margin-top: 25px;
+    box-sizing: border-box;
+    padding: 5px 15px;
+    transition: 0.2s all ease-in-out;
+}
+#posts article:hover {
+    opacity: 0.5;
+}
+#posts article:hover header {
+    background-color: #DAE6E1;
+}
+#posts article header p, #posts article header h2 {
+    color: #bbbbbb;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 19px;
+    transition: 0.2s all ease-in-out;
+}
+#posts article header h2 {
+	color: black;
+    font-weight: 700;
+}
+#posts article:hover header p, #posts article:hover header h2 {
+    color: black;
+}
+
+/* 7. BLOG PAGE CONTENT SECTION */
+
+#container {
+    width: 600px;
+    margin: 0 auto;
+    padding-left: 60px;
+    font-family: 'Open Sans', sans-serif;
+}
+#container .date {
+    font-style: italic;
+    color: gray;
+    font-weight: 300;
+    font-family: serif;
+}
+#container p {
+    font-size: 12px;
+    line-height: 18px;
+    color: #4A4A4A;
+    font-weight: 300;
+}
+#container img {
+    max-width: 100%;
+    margin: 14px 0;
+}
+#container a {
+    color: #cc0404;
+    text-decoration: none;
+    border-bottom: 1px dotted #cc0404;
+    transition: 0.2s all ease-in-out;
+}
+#container a:hover {
+    background-color: #DAE6E1;
+    color: white;
+    border-bottom: 1px dotted gray;
+}
+#container blockquote {
+    border-left: 2px solid #C1C1C1;
+    padding: 20px 0 20px 20px;
+    margin: 14px 0px;
+    background-color: #F8FDFF;
+    font-size: 14px;
+    font-weight: 300;
+}
+#container blockquote p {
+    color: black;
+    font-style: italic;
+}
+#container pre {
+    border-left: 2px solid #BDCAC1;
+    padding: 20px 0 20px 20px;
+    margin: 14px 0px;
+    background-color: #F4FBF9;
+    font-size: 14px;
+    font-weight: 300;
+    color: #CEB2B2;
+    overflow-x: scroll;
+    position: relative;
+}
+#container pre .text-copy-tooltip {
+    transition: 0.2s all ease-in-out;
+    display: block;
+    opacity: 0.3;
+    height: 14px;
+    width: 170px;
+    font-size: 12px;
+    text-decoration: underline;
+    background-color: black;
+    color: white;
+    border-radius: 0 0 0 4px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+}
+#container pre:hover .text-copy-tooltip {
+    opacity: 0.8;
+}
+#clipboardArea {
+    display: block;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 0;
+    left: -500px;
+}
+#container ul {
+    list-style-type: none;
+    padding: 0;
+}
+#container li {
+    border-left: 2px solid rgb(193, 193, 193);
+    padding: 0 0 0 20px;
+    margin: 5px 0;
+}
+#container hr {
+    border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: gray;;
+}
+.relatedItems {
+    width: 600px;
+    margin: 0 auto;
+    padding-left: 60px;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+}
+.relatedItems header {
+    width: 100%;
+    margin: 15px 0;
+}
+.relatedItems article {
+    height: 70px;
+    width: 294px;
+    position: relative;
+    margin: 3px;
+    overflow: hidden;
+    background-color: #DAE6E1;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+}
+.relatedItems article:hover {
+    opacity: 0.5;
+}
+.relatedItems article img {
+    height: 64px;
+    width: 64px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+}
+.relatedItems article h1 {
+    width: 220px;
+    height: 34px;
+    position: absolute;
+    top: 3px;
+    left: 70px;
+    overflow: hidden;
+    font-size: 12px;
+    color: white;
+    line-height: 17px;
+    transition: 0.3s all ease-in-out;
+}
+.relatedItems article:hover h1 {
+    color: black;
+}
+.relatedItems article p {
+    width: 220px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 3px;
+    left: 70px;
+    overflow: hidden;
+    font-size: 12px;
+    color: gray;
+    line-height: 30px;
+    text-align: right;
+    text-transform: uppercase;
+    font-weight: 800;
+    transition: 0.3s all ease-in-out;
+}
+.relatedItems article:hover p {
+    color: black;
+}
+/* 8. LANDING PAGE INTERACTIVE HERO */
+/* The langing page has a special box with an animated hero in it. */
+#landingHero {
+    display: block;
+    width: 640px;
+    height: 500px;
+    overflow: hidden;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+#landingHero .fallback {
+    height: 100%;
+}
+#landingHero div {
+    position: absolute;
+    z-index: 10;
+}
+figcaption.landingHeroCaption {
+    width: 640px;
+    margin: 20px auto;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Pajovic Website Mobile CSS */
+/* Mobile CSS file is made up of two scaffolds, Tablet@980 and Mobile@420px */
+/* TABLE OF CONTENTS */
+/* 1. Tablet General Styles */
+/* 2. Sidebar/Menu */
+/* 3. Pill Icon Inclinometer */
+/* 4. Footer */
+/* 5. Content Section General Style */
+/* 6. Category Page Content Section */
+/* 7. Blog Page Content Section */
+
+
+
+@media (max-width: 980px) {
+/* 1. TABLET GENERAL STYLES */
+/* Here be thy headers, body, and all other non-page-specific fixes. */
+h1 {
+    text-align: center;
+    color: black;
+    line-height: 100%;
+    position: static;
+    font-size: 70px;
+}
+#sidebar, #content { /* Sidebar and Content are set as blocks, on top of each other */
+    display: block;
+    float: none;
+    min-height: auto;
+    overflow: hidden;
+}
+#content {
+    width: 100%;
+}
+#sidebar {  /* The width is set fixed so the element is horizontally centered */
+    padding: 0;
+    width: 415px;
+    margin: 0 auto;
+    min-height: initial;
+    position: initial;
+}
+#sidebar nav {
+    float: left;
+    width: calc(100% - 180px);
+}
+#logo { /* Logo position is changed */
+    float: right;
+}
+.icon-wrap { /* Its size is bigger */
+    box-sizing: border-box;
+    margin: 10px;
+    height: 160px;
+    width: 160px;
+    border-width: 4px;
+}
+.icon-pill {
+    height: 40px;
+    width: 15px;
+    border-width: 4px;
+    left: 20px;
+}
+.icon-wrap:hover .icon-pill {
+    bottom: 104px;
+}
+/*FOOTER*/
+footer {
+    max-width: 640px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+#upArrow {
+    display: block;
+}
+/* 2. TABLET CATEGORY PAGE */
+/* We need to rearrange the page to have  */
+#posts {
+    margin: 0 calc((100% - (3 * 140px)) / 2); /* 100% - 5 articles */
+}
+#posts article:nth-child(5n) .postThumbnail::after {  /* Reset ye olde rules */
+    display: none;
+}
+#posts article:nth-child(3n) .postThumbnail::after,
+#posts article:nth-last-child(1) .postThumbnail::after { /* The right section of the box only appears on the end of each row. Skew is fine-tuned. */
+    content: "";
+    display: block;
+    background: #dadada;
+    height: 140px;
+    width: 20px;
+    position: absolute;
+    top: 5px;
+    left: 140px;
+    -webkit-transform: skewY(-26deg);
+            transform: skewY(-26deg);
+}
+#posts article:nth-child(6n+1) .postThumbnail,
+#posts article:nth-child(6n+3) .postThumbnail,
+#posts article:nth-child(6n+4) .postThumbnail,
+#posts article:nth-child(6n+6) .postThumbnail { /* Every first ( \ ) iteration */
+    -webkit-transform: skewY(13deg);
+            transform: skewY(13deg);
+}
+#posts article:nth-child(6n+1) .postThumbnail::before,
+#posts article:nth-child(6n+3) .postThumbnail::before,
+#posts article:nth-child(6n+4) .postThumbnail::before,
+#posts article:nth-child(6n+6) .postThumbnail::before { /* Every first ( \ ) iteration */
+    -webkit-transform: skewX(-65deg);
+            transform: skewX(-65deg);
+}
+#posts article:nth-child(6n+2) .postThumbnail,
+#posts article:nth-child(6n+5) .postThumbnail { /* Every second ( / ) iteration */
+    -webkit-transform: skewY(-13deg);
+            transform: skewY(-13deg);
+}
+#posts article:nth-child(6n+2) .postThumbnail::before,
+#posts article:nth-child(6n+5) .postThumbnail::before { /* Every second ( / ) iteration */
+    -webkit-transform: skewX(65deg);
+            transform: skewX(65deg);
+}
+
+/* 3. TABLET BLOGPOST PAGE */
+/* Blogpost is mostly fine as is in tablet form. */
+main header {
+    margin: 50px auto;
+}
+#container {
+    max-width: 640px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+#container p {
+    font-size: 14px;
+    line-height: 21px;
+}
+.relatedItems {
+    max-width: 640px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+/* 8. LANDING PAGE INTERACTIVE HERO */
+/* The langing page has a special box with an animated hero in it. */
+#landingHero {
+    max-width: 640px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+#landingHero .fallback {
+    height: 100%;
+    width: auto;
+}
+figcaption.landingHeroCaption {
+    width: 100%;
+}
+
+} /* End of TABLET! */
+
+
+
+/*MOBILE*/
+@media (max-width: 420px) {
+/*GENERAL STYLES*/
+h1 {
+    font-size: 2.6rem;
+    text-align: center;
+    line-height: 3rem;
+    color: white;
+}
+h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+main>header {
+    padding: 50px 0;
+    background-color: #DAE6E1; // #dadada
+}
+#logo {
+    display: none;
+}
+.icon-scroll {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 8px;
+    height: auto;
+    opacity: 0.9;
+}
+#sidebar {
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    min-height: 50px;
+}
+#sidebar nav {
+    width: 100%;
+    height: 100px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+#sidebar nav ul {
+    height: 50px;
+    min-width: 500px;
+}
+#sidebar nav ul li {
+    float: left;
+}
+#sidebar nav li {
+    letter-spacing: 0px;
+}
+#sidebar nav li:nth-child(1) a, 
+#sidebar nav li:nth-child(2) a, 
+#sidebar nav li:nth-child(3) a, 
+#sidebar nav li:nth-child(4) a {
+    font-size: 20px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 10px;
+}
+
+
+
+
+/*Category Page*/
+#posts {
+    display: block;
+    padding: 20px;
+    margin: 0;
+}
+#posts article {
+    width: auto;
+    position: relative;
+}
+#posts article header {
+    width: calc(100% - 140px - 30px);
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0;
+}
+#posts article .postThumbnail header h2 {
+    text-align: left;
+}
+#posts article .postThumbnail::after {
+    content: "";
+    display: block;
+    background: #dadada;
+    height: 140px;
+    width: 20px;
+    position: absolute;
+    top: 5px;
+    left: 140px;
+    -webkit-transform: skewY(-26deg);
+            transform: skewY(-26deg);
+}
+#posts article .postThumbnail,
+#posts article.evenRow:nth-child(2n) .postThumbnail, 
+#posts article:nth-child(2n) .postThumbnail,
+#posts article.evenRow .postThumbnail {
+    -webkit-transform: skewY(13deg);
+            transform: skewY(13deg);
+}
+#posts article .postThumbnail::before,
+#posts article.evenRow:nth-child(2n) .postThumbnail::before,
+#posts article:nth-child(2n) .postThumbnail::before,
+#posts article.evenRow .postThumbnail::before {
+    -webkit-transform: skewX(-65deg);
+            transform: skewX(-65deg);
+}
+#posts article .hoverArrow {
+    top: 50%;
+    left: 20%;
+}
+#posts article header h2, #posts article header p {
+    font-size: 12px;
+    text-align: center;
+    line-height: 14px;
+    font-weight: 700;
+}
+.relatedItems article p {
+    text-align: center;
+}
+
+/* 3. TABLET BLOGPOST PAGE */
+/* Blogpost is mostly fine as is in tablet form. */
+
+#container {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+#container .date {
+    text-align: center;
+}
+
+#landingHero {
+    max-height: 330px;
+}
+
+
+
+
+
+
+}

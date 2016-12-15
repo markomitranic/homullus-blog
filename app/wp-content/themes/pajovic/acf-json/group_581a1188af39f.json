@@ -1,0 +1,269 @@
+{
+    "key": "group_581a1188af39f",
+    "title": "Options Page",
+    "fields": [
+        {
+            "key": "field_58206cd0a8cde",
+            "label": "Visual Settings",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_581a1624abc47",
+            "label": "Gizmo Logo",
+            "name": "gizmo_logo",
+            "type": "image",
+            "instructions": "Please select an image go be used as a logo in the homepage Gizmo. The image should ideally be square about 400 x 400 px in size. The image is used dynamically, and will be scaled a lot. The image is CSS-rigged to a max width of 200px.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_58206cb3a8cdd",
+            "label": "Favicon Settings",
+            "name": "favicon_settings",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_58206cf0a8cdf",
+            "label": "Favicon 16",
+            "name": "favicon_16",
+            "type": "image",
+            "instructions": "The web based favicon 16 x 16 pixels, for older browsers.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "full",
+            "library": "all",
+            "min_width": 16,
+            "min_height": 16,
+            "min_size": "",
+            "max_width": 16,
+            "max_height": 16,
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_58206dfca8ce0",
+            "label": "Favicon 32",
+            "name": "favicon_32",
+            "type": "image",
+            "instructions": "The web based favicon 32 x 32 pixels, for newer and retina-based browsers.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "full",
+            "library": "all",
+            "min_width": 32,
+            "min_height": 32,
+            "min_size": "",
+            "max_width": 32,
+            "max_height": 32,
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_58206e4da8ce1",
+            "label": "Apple iOS Icon",
+            "name": "apple_ios_icon",
+            "type": "image",
+            "instructions": "The icon for Apple devices. This icon will be used both as a favicon and as an Applicaiton icon. The size is required to be 180 x 180 pixels and has to be PNG.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "Miniature size",
+            "library": "all",
+            "min_width": 180,
+            "min_height": 180,
+            "min_size": "",
+            "max_width": 180,
+            "max_height": 180,
+            "max_size": "",
+            "mime_types": "png"
+        },
+        {
+            "key": "field_58207873d49f7",
+            "label": "Apple Full Screen",
+            "name": "apple_full_screen",
+            "type": "true_false",
+            "instructions": "You can instruct the device to display the Web App in full screen.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "message": "Use Full Screen",
+            "default_value": 1
+        },
+        {
+            "key": "field_582070cea3c48",
+            "label": "Android Application",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 100,
+                "class": "",
+                "id": ""
+            },
+            "message": "The following settings will be used for Android web application. Bear in mind that in order to support all devices. Bear in mind that \"manifest.json\" MUST be edited manually.",
+            "new_lines": "",
+            "esc_html": 1
+        },
+        {
+            "key": "field_58206e95a8ce2",
+            "label": "Android App Icon",
+            "name": "android_app_icon",
+            "type": "image",
+            "instructions": "The icon for Android devices. This icon will be used both as a favicon and as an Applicaiton icon. The size is required to be 192 x 192 pixels and needs to be PNG.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "Miniature size",
+            "library": "all",
+            "min_width": 192,
+            "min_height": 192,
+            "min_size": "",
+            "max_width": 192,
+            "max_height": 192,
+            "max_size": "",
+            "mime_types": "png"
+        },
+        {
+            "key": "field_582071c8a3c4a",
+            "label": "Android App Splash",
+            "name": "android_app_splash",
+            "type": "image",
+            "instructions": "The icon for Android devices. This icon will be used both as a favicon and as an Applicaiton icon. The size is required to be 512 x 512 pixels and needs to be PNG.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "Miniature size",
+            "library": "all",
+            "min_width": 512,
+            "min_height": 512,
+            "min_size": "",
+            "max_width": 512,
+            "max_height": 512,
+            "max_size": "",
+            "mime_types": "png"
+        },
+        {
+            "key": "field_58207056a8ce3",
+            "label": "Android App Name",
+            "name": "android_app_name",
+            "type": "text",
+            "instructions": "Enter a name for your application. If nothing is entered here, your website name will be used.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Website App Name...",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_58207152a3c49",
+            "label": "Android App Color",
+            "name": "android_app_color",
+            "type": "color_picker",
+            "instructions": "Starting with Android Lollipop, you can customize the color of the task bar in the switcher.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#000000"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "template-options"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "The general theme options.",
+    "modified": 1478523402
+}
